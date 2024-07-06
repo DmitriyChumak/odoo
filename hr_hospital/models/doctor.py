@@ -1,6 +1,7 @@
 # doctor model
 
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 
 class Doctor(models.Model):
@@ -49,3 +50,9 @@ class Doctor(models.Model):
             if record.mentor_id and record.mentor_id.is_intern:
                 raise ValidationError("An intern cannot be assigned as a mentor.")
 
+    def name_get(self):
+        result = []
+        for doctor in self:
+            name = f"{doctor.first_name} {doctor.last_name}"
+            result.append((doctor.id, name))
+        return result

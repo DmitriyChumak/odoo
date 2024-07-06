@@ -38,3 +38,9 @@ class Diagnosis(models.Model):
         domain="[('is_intern', '=', False)]",
         help="This diagnosis, made by the doctor-intern, has been reviewed and approved by their mentor."
     )
+
+    doctor_id = fields.Many2one(
+        comodel_name='hr_hospital.doctor',
+        string='Assigned Doctor',
+        required=True
+    )

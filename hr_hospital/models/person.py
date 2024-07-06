@@ -1,6 +1,8 @@
 # person model
 
 from odoo import models, fields, api
+from datetime import date
+from odoo import exceptions
 
 class Person(models.AbstractModel):
     _name = 'hr_hospital.person'
@@ -25,6 +27,12 @@ class Person(models.AbstractModel):
         store=True
     )
 
+    age = fields.Integer(
+        string='Age',
+        compute='_compute_age',
+        store=True
+    )
+
     @api.depends('first_name', 'last_name')
     def _compute_names(self):
         for record in self:
@@ -32,3 +40,18 @@ class Person(models.AbstractModel):
                 record.name = f'{record.first_name} {record.last_name}'.strip()
             else:
                 record.name = "Unnamed Person"
+
+    @api.depends('birthdate')
+    def _compute_age(self):
+        for record in self:
+            if record.birthdate:
+                today = date.today()
+                try:
+                    birth_date = fields.Date.from_string(record.birthdate)
+                    record.age = today.year - birth_date.year - (
+                            (today.month, today.day) < (birth_date.month, birth_date.day)
+                    )
+                except Exception as e:
+                    record.age = 0
+            else:
+                record.age = 0

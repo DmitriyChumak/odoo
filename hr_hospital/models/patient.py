@@ -1,6 +1,6 @@
 # patient model
 
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class Patient(models.Model):
@@ -37,15 +37,9 @@ class Patient(models.Model):
         string='Contact Person'
     )
 
-    age = fields.Integer(
-        string='Age',
-        compute='_compute_age',
-        store=True)
-
-    @api.depends('birthdate')
-    def _compute_age(self):
-        for record in self:
-            if record.birthdate:
-                record.age = (fields.Date.today() - record.birthdate).days // 365
-            else:
-                record.age = 0
+    def name_get(self):
+        result = []
+        for patient in self:
+            name = f"{patient.first_name} {patient.last_name}"
+            result.append((patient.id, name))
+        return result
