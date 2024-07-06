@@ -1,8 +1,8 @@
 # person model
 
 from odoo import models, fields, api
-from datetime import date
-from odoo import exceptions
+from datetime import date, datetime
+from odoo.exceptions import ValidationError
 
 class Person(models.AbstractModel):
     _name = 'hr_hospital.person'
@@ -55,3 +55,20 @@ class Person(models.AbstractModel):
                     record.age = 0
             else:
                 record.age = 0
+
+    @api.model
+    def create(self, vals):
+        if 'birthdate' in vals:
+            try:
+                vals['birthdate'] = datetime.strptime(vals['birthdate'], '%d-%m-%Y').strftime('%Y-%m-%d')
+            except ValueError:
+                raise ValidationError("Incorrect date format, should be DD-MM-YYYY")
+        return super(Person, self).create(vals)
+
+    def write(self, vals):
+        if 'birthdate' in vals:
+            try:
+                vals['birthdate'] = datetime.strptime(vals['birthdate'], '%d-%m-%Y').strftime('%Y-%m-%d')
+            except ValueError:
+                raise ValidationError("Incorrect date format, should be DD-MM-YYYY")
+        return super(Person, self).write(vals)

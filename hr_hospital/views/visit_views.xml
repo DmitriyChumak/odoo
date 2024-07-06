@@ -10,8 +10,8 @@
                     <group>
                         <field name="actual_date_time"/>
                         <field name="state"/>
-                        <field name="doctor_id"/>
                         <field name="planned_date_time"/>
+                        <field name="doctor_id"/>
                         <field name="patient_id"/>
                         <field name="symptoms"/>
                         <field name="diagnosis_ids"/>
@@ -29,8 +29,8 @@
             <tree>
                 <field name="actual_date_time"/>
                 <field name="state"/>
-                <field name="doctor_id"/>
                 <field name="planned_date_time"/>
+                <field name="doctor_id"/>
                 <field name="patient_id"/>
                 <field name="symptoms"/>
                 <field name="diagnosis_ids"/>

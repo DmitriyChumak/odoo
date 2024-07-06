@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <record id="patient_sheldon" model="hr_hospital.patient">
+            <field name="last_name">Cooper</field>
+            <field name="first_name">Sheldon</field>
+            <field name="birthdate">26-02-1980</field>
+            <field name="gender">male</field>
+            <field name="phone">+1-323-555-0104</field>
+            <field name="email">sheldon.cooper@caltech.edu</field>
+            <field name="address">2311 North Los Robles Avenue, Pasadena, CA</field>
+        </record>
+
+        <record id="patient_leonard" model="hr_hospital.patient">
+            <field name="last_name">Hofstadter</field>
+            <field name="first_name">Leonard</field>
+            <field name="birthdate">14-05-1980</field>
+            <field name="gender">male</field>
+            <field name="phone">+1-323-555-0105</field>
+            <field name="email">leonard.hofstadter@caltech.edu</field>
+            <field name="address">2311 North Los Robles Avenue, Pasadena, CA</field>
+        </record>
+
+    </data>
+</odoo>

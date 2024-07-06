@@ -1,0 +1,14 @@
+
+<odoo>
+
+    <record id="disease_infectious" model="hr_hospital.disease">
+        <field name="name">Infectious Diseases</field>
+        <field name="code">INF</field>
+    </record>
+
+    <record id="disease_flu" model="hr_hospital.disease">
+        <field name="name">Flu (Influenza)</field>
+        <field name="code">FLU</field>
+        <field name="parent_id" ref="disease_infectious"/>
+    </record>
+</odoo>

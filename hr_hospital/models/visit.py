@@ -1,7 +1,7 @@
 # visit model
 
 from odoo import models, fields, api
-from datetime import timedelta
+from datetime import datetime, timedelta
 from odoo.exceptions import ValidationError, UserError
 from odoo.tools.translate import _
 
@@ -77,3 +77,34 @@ class Visit(models.Model):
                 raise UserError(_(
                     "You cannot delete a visit that has diagnoses associated with it."
                 ))
+
+    @api.model
+    def create(self, vals):
+        if 'actual_date_time' in vals:
+            try:
+                vals['actual_date_time'] = datetime.strptime(vals['actual_date_time'], '%d-%m-%Y %H:%M:%S').strftime(
+                    '%Y-%m-%d %H:%M:%S')
+            except ValueError:
+                raise ValidationError("Incorrect date format, should be DD-MM-YYYY HH:MM:SS")
+        if 'planned_date_time' in vals:
+            try:
+                vals['planned_date_time'] = datetime.strptime(vals['planned_date_time'], '%d-%m-%Y %H:%M:%S').strftime(
+                    '%Y-%m-%d %H:%M:%S')
+            except ValueError:
+                raise ValidationError("Incorrect date format, should be DD-MM-YYYY HH:MM:SS")
+        return super(Visit, self).create(vals)
+
+    def write(self, vals):
+        if 'actual_date_time' in vals:
+            try:
+                vals['actual_date_time'] = datetime.strptime(vals['actual_date_time'], '%d-%m-%Y %H:%M:%S').strftime(
+                    '%Y-%m-%d %H:%M:%S')
+            except ValueError:
+                raise ValidationError("Incorrect date format, should be DD-MM-YYYY HH:MM:SS")
+        if 'planned_date_time' in vals:
+            try:
+                vals['planned_date_time'] = datetime.strptime(vals['planned_date_time'], '%d-%m-%Y %H:%M:%S').strftime(
+                    '%Y-%m-%d %H:%M:%S')
+            except ValueError:
+                raise ValidationError("Incorrect date format, should be DD-MM-YYYY HH:MM:SS")
+        return super(Visit, self).write(vals)

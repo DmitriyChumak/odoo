@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="doctor_house" model="hr_hospital.doctor">
+            <field name="last_name">House</field>
+            <field name="first_name">Gregory</field>
+            <field name="birthdate">11-06-1959</field>
+            <field name="address">Princeton-Plainsboro Teaching Hospital</field>
+
+            <field name="phone">+1-609-555-1212</field>
+            <field name="email">ghouse@ppth.org</field>
+            <field name="gender">male</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+        <record model="hr_hospital.visit" id="visit_1">
+            <field name="patient_id" ref="hr_hospital.patient_sheldon"/>
+            <field name="doctor_id" ref="hr_hospital.doctor_house"/>
+
+            <field name="planned_date_time">25-06-2024 10:00:00</field>
+            <field name="symptoms">Кашель, температура, головний біль</field>
+            <field name="notes">Призначено противірусні препарати та жарознижуючі засоби</field>
+        </record>
+
+        <record model="hr_hospital.visit" id="visit_2">
+            <field name="patient_id" ref="hr_hospital.patient_leonard"/>
+            <field name="doctor_id" ref="hr_hospital.doctor_house"/>
+
+            <field name="planned_date_time">26-06-2024 14:30:00</field>
+            <field name="symptoms">Втрата нюху, смаку, слабкість</field>
+            <field name="notes">Направлено на ПЛР-тест</field>
+        </record>
+
+    </data>
+</odoo>
