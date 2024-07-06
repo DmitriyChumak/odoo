@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="doctor_ivanov" model="hr_hospital.doctor">
+            <field name="name">Іванов Іван Іванович</field>
+            <field name="specialization">Терапевт</field>
+            <field name="phone">+380951234567</field>
+            <field name="email">ivanov@example.com</field>
+        </record>
+        <record id="doctor_petrov" model="hr_hospital.doctor">
+            <field name="name">Петров Петро Петрович</field>
+            <field name="specialization">Хірург</field>
+            <field name="phone">+380967654321</field>
+            <field name="email">petrov@example.com</field>
+        </record>
+        <record id="doctor_sidorov" model="hr_hospital.doctor">
+            <field name="name">Сидоров Сидір Сидорович</field>
+            <field name="specialization">Кардіолог</field>
+            <field name="phone">+380979876543</field>
+            <field name="email">sidorov@example.com</field>
+        </record>
+        <record id="doctor_kozlova" model="hr_hospital.doctor">
+            <field name="name">Козлова Ольга Ігорівна</field>
+            <field name="specialization">Педіатр</field>
+            <field name="phone">+380661122334</field>
+            <field name="email">kozlova@example.com</field>
+        </record>
+        <record id="doctor_morozov" model="hr_hospital.doctor">
+            <field name="name">Морозов Дмитро Олегович</field>
+            <field name="specialization">Невролог</field>
+            <field name="phone">+380735566778</field>
+            <field name="email">morozov@example.com</field>
+        </record>
+
+        <record id="patient_smith" model="hr_hospital.patient">
+            <field name="name">John Smith</field>
+            <field name="date_of_birth">1985-05-15</field>
+            <field name="gender">male</field>
+            <field name="phone">+1234567890</field>
+            <field name="email">john.smith@example.com</field>
+            <field name="address">123 Main St, Anytown, USA</field>
+        </record>
+        <record id="patient_johnson" model="hr_hospital.patient">
+            <field name="name">Emily Johnson</field>
+            <field name="date_of_birth">1992-08-22</field>
+            <field name="gender">female</field>
+            <field name="phone">+9876543210</field>
+            <field name="email">emily.johnson@example.com</field>
+            <field name="address">456 Elm St, Anytown, USA</field>
+        </record>
+        <record id="patient_williams" model="hr_hospital.patient">
+            <field name="name">Michael Williams</field>
+            <field name="date_of_birth">1978-11-03</field>
+            <field name="gender">male</field>
+            <field name="phone">+55512121212</field>
+            <field name="email">michael.williams@example.com</field>
+            <field name="address">789 Oak St, Anytown, USA</field>
+        </record>
+        <record id="patient_brown" model="hr_hospital.patient">
+            <field name="name">Olivia Brown</field>
+            <field name="date_of_birth">2000-03-10</field><field name="gender">female</field>
+            <field name="phone">+7778889990</field>
+            <field name="email">olivia.brown@example.com</field>
+            <field name="address">101 Pine St, Anytown, USA</field>
+        </record>
+        <record id="patient_davis" model="hr_hospital.patient">
+            <field name="name">Daniel Davis</field>
+            <field name="date_of_birth">1995-09-30</field>
+            <field name="gender">male</field>
+            <field name="phone">+4443332221</field>
+            <field name="email">daniel.davis@example.com</field>
+            <field name="address">202 Cedar St, Anytown, USA</field>
+        </record>
+    </data>
+</odoo>

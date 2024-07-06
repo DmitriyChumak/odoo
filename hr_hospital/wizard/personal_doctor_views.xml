@@ -1,0 +1,27 @@
+<odoo>
+    <record id="view_personal_doctor_wizard" model="ir.ui.view">
+        <field name="name">personal.doctor.wizard.form</field>
+        <field name="model">hr_hospital.personal.doctor.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Assign Personal Doctor">
+                <group>
+                    <field name="doctor_id"/>
+                    <field name="patient_ids"/>
+                </group>
+                <footer>
+                    <button name="assign_personal_doctor" type="object" string="Assign" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_personal_doctor_wizard" model="ir.actions.act_window">
+        <field name="name">Assign Personal Doctor</field>
+        <field name="res_model">hr_hospital.personal.doctor.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_personal_doctor_wizard" parent="hr_hospital_menu_patients" action="action_personal_doctor_wizard" sequence="90"/>
+</odoo>

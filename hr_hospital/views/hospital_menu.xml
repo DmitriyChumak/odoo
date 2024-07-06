@@ -1,0 +1,18 @@
+<!--Hospital menu-->
+
+<odoo>
+    <!-- Root menu item -->
+    <menuitem id="hr_hospital_menu_root" name="Hospital"/>
+
+    <!-- Menu items -->
+    <menuitem id="hr_hospital_menu_patients" name="Patients" parent="hr_hospital_menu_root" action="action_patient"/>
+    <menuitem id="hr_hospital_menu_doctors" name="Doctors" parent="hr_hospital_menu_root" action="action_doctor"/>
+    <menuitem id="hr_hospital_menu_diseases" name="Diseases" parent="hr_hospital_menu_root" action="action_disease"/>
+    <menuitem id="hr_hospital_menu_visits" name="Visits" parent="hr_hospital_menu_root" action="action_visit"/>
+
+<!--    Sub-menu Doctor -> Specialization-->
+    <menuitem id="hr_hospital_menu_specializations" name="Specializations" parent="hr_hospital.hr_hospital_menu_doctors" action="action_specialization"/>
+
+    <!--    Sub-menu Patient -> Diagnoses-->
+    <menuitem id="hr_hospital_menu_diagnoses" name="Diagnoses" parent="hr_hospital.hr_hospital_menu_patients" action="action_diagnosis"/>
+</odoo>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="disease_infectious" model="hr_hospital.disease">
+            <field name="name">Infectious Diseases</field>
+            <field name="code">INF</field>
+        </record>
+        <record id="disease_flu" model="hr_hospital.disease">
+            <field name="name">Flu (Influenza)</field>
+            <field name="code">FLU</field>
+            <field name="parent_id" ref="disease_infectious"/>
+        </record>
+        <record id="disease_covid" model="hr_hospital.disease">
+            <field name="name">COVID-19</field>
+            <field name="code">COV19</field>
+            <field name="parent_id" ref="disease_infectious"/>
+        </record>
+        <record id="disease_strep_throat" model="hr_hospital.disease">
+            <field name="name">Strep Throat</field>
+            <field name="code">STRP</field>
+            <field name="parent_id" ref="disease_infectious"/>
+        </record>
+        <record id="disease_pneumonia" model="hr_hospital.disease">
+            <field name="name">Pneumonia</field>
+            <field name="code">PNMN</field>
+            <field name="parent_id" ref="disease_infectious"/>
+        </record>
+        <record id="disease_bronchitis" model="hr_hospital.disease">
+            <field name="name">Bronchitis</field>
+            <field name="code">BRNC</field>
+            <field name="parent_id" ref="disease_infectious"/>
+        </record>
+        <record id="disease_sinusitis" model="hr_hospital.disease">
+            <field name="name">Sinusitis</field>
+            <field name="code">SINS</field>
+            <field name="parent_id" ref="disease_infectious"/>
+        </record>
+
+        <record id="disease_cardiovascular" model="hr_hospital.disease">
+            <field name="name">Cardiovascular Diseases</field>
+            <field name="code">CARD</field>
+        </record>
+        <record id="disease_hypertension" model="hr_hospital.disease">
+            <field name="name">Hypertension (High Blood Pressure)</field>
+            <field name="code">HBP</field>
+            <field name="parent_id" ref="disease_cardiovascular"/>
+        </record>
+        <record id="disease_heart_failure" model="hr_hospital.disease">
+            <field name="name">Heart Failure</field>
+            <field name="code">HF</field>
+            <field name="parent_id" ref="disease_cardiovascular"/>
+        </record>
+        <record id="disease_coronary_artery_disease" model="hr_hospital.disease">
+            <field name="name">Coronary Artery Disease</field>
+            <field name="code">CAD</field>
+            <field name="parent_id" ref="disease_cardiovascular"/>
+        </record>
+        <record id="disease_arrhythmia" model="hr_hospital.disease">
+            <field name="name">Arrhythmia</field>
+            <field name="code">ARRY</field>
+            <field name="parent_id" ref="disease_cardiovascular"/>
+        </record>
+
+        <record id="disease_endocrine" model="hr_hospital.disease">
+            <field name="name">Endocrine Diseases</field>
+            <field name="code">ENDO</field>
+        </record>
+        <record id="disease_diabetes" model="hr_hospital.disease">
+            <field name="name">Diabetes</field>
+            <field name="code">DIAB</field>
+            <field name="parent_id" ref="disease_endocrine"/>
+        </record>
+        <record id="disease_thyroid_disease" model="hr_hospital.disease">
+            <field name="name">Thyroid Disease</field>
+            <field name="code">THYR</field>
+            <field name="parent_id" ref="disease_endocrine"/>
+        </record>
+
+        <record id="disease_respiratory" model="hr_hospital.disease">
+            <field name="name">Respiratory Diseases</field>
+            <field name="code">RESP</field>
+        </record>
+        <record id="disease_asthma" model="hr_hospital.disease">
+            <field name="name">Asthma</field>
+            <field name="code">ASTH</field>
+            <field name="parent_id" ref="disease_respiratory"/>
+        </record>
+        <record id="disease_copd" model="hr_hospital.disease">
+            <field name="name">COPD</field>
+            <field name="code">COPD</field>
+            <field name="parent_id" ref="disease_respiratory"/>
+        </record>
+
+        <record id="disease_neurological" model="hr_hospital.disease">
+            <field name="name">Neurological Diseases</field>
+            <field name="code">NEUR</field>
+        </record>
+        <record id="disease_epilepsy" model="hr_hospital.disease">
+            <field name="name">Epilepsy</field>
+            <field name="code">EPL</field>
+            <field name="parent_id" ref="disease_neurological"/>
+        </record>
+        <record id="disease_migraine" model="hr_hospital.disease">
+            <field name="name">Migraine</field>
+            <field name="code">MGRN</field>
+            <field name="parent_id" ref="disease_neurological"/>
+        </record>
+    </data>
+</odoo>

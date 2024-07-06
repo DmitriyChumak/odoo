@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+        <record model="hr_hospital.visit" id="visit_1">
+            <field name="patient_id" ref="hr_hospital.patient_sheldon"/>
+            <field name="doctor_id" ref="hr_hospital.doctor_house"/>
+            <field name="disease_id" ref="hr_hospital.disease_flu"/>
+            <field name="date">2024-06-25 10:00:00</field>
+            <field name="symptoms">Кашель, температура, головний біль</field>
+            <field name="notes">Призначено противірусні препарати та жарознижуючі засоби</field>
+        </record>
+
+        <record model="hr_hospital.visit" id="visit_2">
+            <field name="patient_id" ref="hr_hospital.patient_leonard"/>
+            <field name="doctor_id" ref="hr_hospital.doctor_wilson"/>
+            <field name="disease_id" ref="hr_hospital.disease_covid"/>
+            <field name="date">2024-06-26 14:30:00</field>
+            <field name="symptoms">Втрата нюху, смаку, слабкість</field>
+            <field name="notes">Направлено на ПЛР-тест</field>
+        </record>
+
+        <record model="hr_hospital.visit" id="visit_3">
+            <field name="patient_id" ref="hr_hospital.patient_penny"/>
+            <field name="doctor_id" ref="hr_hospital.doctor_cuddy"/>
+            <field name="disease_id" ref="hr_hospital.disease_pneumonia"/>
+            <field name="date">2024-06-27 09:15:00</field>
+            <field name="symptoms">Біль у грудях, кашель з мокротою</field>
+            <field name="notes">Призначено антибіотики та рентген</field>
+        </record>
+
+        <record model="hr_hospital.visit" id="visit_4">
+            <field name="patient_id" ref="hr_hospital.patient_howard"/>
+            <field name="doctor_id" ref="hr_hospital.doctor_foreman"/>
+            <field name="disease_id" ref="hr_hospital.disease_bronchitis"/>
+            <field name="date">2024-06-28 15:45:00</field>
+            <field name="symptoms">Кашель, задишка, підвищена температура</field>
+            <field name="notes">Рекомендовано постільний режим та інгаляції</field>
+        </record>
+
+        <record model="hr_hospital.visit" id="visit_5">
+            <field name="patient_id" ref="hr_hospital.patient_raj"/>
+            <field name="doctor_id" ref="hr_hospital.doctor_cameron"/>
+            <field name="disease_id" ref="hr_hospital.disease_allergy"/>
+            <field name="date">2024-06-29 11:30:00</field>
+            <field name="symptoms">Свербіж, почервоніння шкіри, чхання</field>
+            <field name="notes">Призначено антигістамінні препарати</field>
+        </record>
+    </data>
+</odoo>

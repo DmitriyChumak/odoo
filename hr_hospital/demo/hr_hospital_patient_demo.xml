@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+        <record id="patient_sheldon" model="hr_hospital.patient">
+            <field name="last_name">Cooper</field>
+            <field name="first_name">Sheldon</field>
+            <field name="date_of_birth">1980-02-26</field>
+            <field name="gender">male</field>
+            <field name="phone">+1-323-555-0104</field>
+            <field name="email">sheldon.cooper@caltech.edu</field>
+            <field name="address">2311 North Los Robles Avenue, Pasadena, CA</field>
+        </record>
+
+        <record id="patient_leonard" model="hr_hospital.patient">
+            <field name="last_name">Hofstadter</field>
+            <field name="first_name">Leonard</field>
+            <field name="date_of_birth">1980-05-17</field>
+            <field name="gender">male</field>
+            <field name="phone">+1-323-555-0105</field>
+            <field name="email">leonard.hofstadter@caltech.edu</field>
+            <field name="address">2311 North Los Robles Avenue, Pasadena, CA</field>
+        </record>
+
+        <record id="patient_penny" model="hr_hospital.patient">
+            <field name="last_name">Hofstadter</field>
+            <field name="first_name">Penny</field>
+            <field name="date_of_birth">1985-12-02</field>
+            <field name="gender">female</field>
+            <field name="phone">+1-323-555-0106</field>
+            <field name="email">penny@thecheesecakefactory.com</field>
+            <field name="address">2311 North Los Robles Avenue, Pasadena, CA</field>
+        </record>
+
+        <record id="patient_howard" model="hr_hospital.patient">
+            <field name="last_name">Wolowitz</field>
+            <field name="first_name">Howard</field>
+            <field name="date_of_birth">1981-03-01</field>
+            <field name="gender">male</field>
+            <field name="phone">+1-323-555-0107</field>
+            <field name="email">howard.wolowitz@caltech.edu</field>
+            <field name="address">Altadena, CA</field>
+        </record>
+
+        <record id="patient_raj" model="hr_hospital.patient">
+            <field name="last_name">Koothrappali</field>
+            <field name="first_name">Rajesh</field>
+            <field name="date_of_birth">1982-10-06</field>
+            <field name="gender">male</field>
+            <field name="phone">+1-323-555-0108</field>
+            <field name="email">rajesh.koothrappali@caltech.edu</field>
+            <field name="address">Pasadena, CA</field>
+        </record>
+    </data>
+</odoo>

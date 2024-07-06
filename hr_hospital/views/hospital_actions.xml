@@ -1,0 +1,52 @@
+<!--Hospital actions -->
+
+<odoo>
+            <!-- Action definition for doctor list view -->
+    <record id="action_doctor" model="ir.actions.act_window">
+        <field name="name">Doctors</field>
+        <field name="res_model">hr_hospital.doctor</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_doctor_tree"/>
+    </record>
+
+    <!-- Action definition for patient list view -->
+    <record id="action_patient" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="res_model">hr_hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_patient_tree"/>
+    </record>
+
+    <!-- Action definition for diagnosis list view -->
+    <record id="action_diagnosis" model="ir.actions.act_window">
+        <field name="name">Diagnoses</field>
+        <field name="res_model">hr_hospital.diagnosis</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_diagnosis_tree"/>
+    </record>
+
+    <!-- Action definition for disease list view -->
+    <record id="action_disease" model="ir.actions.act_window">
+        <field name="name">Diseases</field>
+        <field name="res_model">hr_hospital.disease</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_disease_tree"/>
+    </record>
+
+    <!-- Action definition for visit list view -->
+    <record id="action_visit" model="ir.actions.act_window">
+        <field name="name">Visits</field>
+        <field name="res_model">hr_hospital.visit</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_visit_tree"/>
+    </record>
+
+    <!-- Action definition for specialization list view -->
+    <record id="action_specialization" model="ir.actions.act_window">
+        <field name="name">Specializations</field>
+        <field name="res_model">hr_hospital.specialization</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_specialization_tree"/>
+    </record>
+
+</odoo>

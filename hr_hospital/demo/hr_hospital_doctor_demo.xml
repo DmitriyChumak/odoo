@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+        <record id="doctor_house" model="hr_hospital.doctor">
+            <field name="last_name">House</field>
+            <field name="first_name">Gregory</field>
+            <field name="date_of_birth">1959-06-11</field>
+            <field name="address">Princeton-Plainsboro Teaching Hospital</field>
+            <field name="specialization">Диагностика</field>
+            <field name="phone">+1-609-555-1212</field>
+            <field name="email">ghouse@ppth.org</field>
+            <field name="gender">male</field>
+        </record>
+
+        <record id="doctor_wilson" model="hr_hospital.doctor">
+            <field name="last_name">Wilson</field>
+            <field name="first_name">James</field>
+            <field name="date_of_birth">1961-03-22</field>
+            <field name="address">Princeton-Plainsboro Teaching Hospital</field>
+            <field name="specialization">Онколог</field>
+            <field name="phone">+1-609-555-1213</field>
+            <field name="email">jwilson@ppth.org</field>
+            <field name="gender">male</field>
+        </record>
+
+        <record id="doctor_cuddy" model="hr_hospital.doctor">
+            <field name="last_name">Cuddy</field>
+            <field name="first_name">Lisa</field>
+            <field name="date_of_birth">1965-07-18</field>
+            <field name="address">Princeton-Plainsboro Teaching Hospital</field>
+            <field name="specialization">Декан</field>
+            <field name="phone">+1-609-555-1214</field>
+            <field name="email">lcuddy@ppth.org</field>
+            <field name="gender">female</field>
+        </record>
+
+        <record id="doctor_foreman" model="hr_hospital.doctor">
+            <field name="last_name">Foreman</field>
+            <field name="first_name">Eric</field>
+            <field name="date_of_birth">1976-09-05</field>
+            <field name="address">Princeton-Plainsboro Teaching Hospital</field>
+            <field name="specialization">Невролог</field>
+            <field name="phone">+1-609-555-1215</field>
+            <field name="email">eforeman@ppth.org</field>
+            <field name="gender">male</field>
+        </record>
+
+        <record id="doctor_cameron" model="hr_hospital.doctor">
+            <field name="last_name">Cameron</field>
+            <field name="first_name">Allison</field>
+            <field name="date_of_birth">1978-02-12</field>
+            <field name="address">Princeton-Plainsboro Teaching Hospital</field>
+            <field name="specialization">Імунолог</field>
+            <field name="phone">+1-609-555-1216</field>
+            <field name="email">acameron@ppth.org</field>
+            <field name="gender">female</field>
+        </record>
+    </data>
+</odoo>
