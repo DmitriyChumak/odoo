@@ -1,6 +1,28 @@
 <!--Patient view-->
 
 <odoo>
+<!--    tree-->
+    <record id="view_patient_tree" model="ir.ui.view">
+        <field name="name">hr_hospital.patient.tree</field>
+        <field name="model">hr_hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" readonly="True"/>
+                <field name="gender"/>
+                <field name="age"/>
+                <field name="photo"/>
+                <field name="address"/>
+                <field name="supervised_doctor_id"/>
+                <field name="passport_info"/>
+                <field name="personal_doctor_id"/>
+                <field name="disease_ids"/>
+                <field name="contact_person"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+
+<!--    form-->
     <record id="view_patient_form" model="ir.ui.view">
         <field name="name">hr_hospital.patient.form</field>
         <field name="model">hr_hospital.patient</field>
@@ -31,24 +53,12 @@
         </field>
     </record>
 
-    <record id="view_patient_tree" model="ir.ui.view">
-        <field name="name">hr_hospital.patient.tree</field>
-        <field name="model">hr_hospital.patient</field>
-        <field name="arch" type="xml">
-            <tree>
-                <field name="name" readonly="True"/>
-                <field name="gender"/>
-                <field name="age"/>
-                <field name="photo"/>
-                <field name="address"/>
-                <field name="supervised_doctor_id"/>
-                <field name="passport_info"/>
-                <field name="personal_doctor_id"/>
-                <field name="disease_ids"/>
-                <field name="contact_person"/>
-                <field name="email"/>
-            </tree>
-        </field>
+        <!-- Action definition for patient list view -->
+    <record id="action_patient" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="res_model">hr_hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_patient_tree"/>
     </record>
-    
+
 </odoo>

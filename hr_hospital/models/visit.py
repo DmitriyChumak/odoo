@@ -5,10 +5,16 @@ from datetime import datetime, timedelta
 from odoo.exceptions import ValidationError, UserError
 from odoo.tools.translate import _
 
+
 class Visit(models.Model):
     _name = 'hr_hospital.visit'
     _description = 'Visit'
 
+    name = fields.Char(
+        string='Visit Name',
+        compute='_compute_name',
+        store=True
+    )
 
     state = fields.Selection(
         selection=[
@@ -49,6 +55,24 @@ class Visit(models.Model):
     symptoms = fields.Text(string='Symptoms')
     notes = fields.Text(string='Notes')
 
+    visit_count = fields.Integer(
+        string='Visit Count',
+        compute='_compute_visit_count',
+        store=True
+    )
+
+    @api.depends('patient_id', 'planned_date_time')
+    def _compute_name(self):
+        for visit in self:
+            visit.name = f'{visit.patient_id.name} - {visit.planned_date_time.strftime("%Y-%m-%d")}' \
+                if visit.planned_date_time \
+                else visit.patient_id.name
+
+    @api.depends()
+    def _compute_visit_count(self):
+        for visit in self:
+            visit.visit_count = 1
+
     @api.onchange('state')
     def _onchange_state(self):
         if self.state == 'completed':
@@ -80,31 +104,28 @@ class Visit(models.Model):
 
     @api.model
     def create(self, vals):
-        if 'actual_date_time' in vals:
+        if 'actual_date_time' in vals and isinstance(vals['actual_date_time'], str):
             try:
-                vals['actual_date_time'] = datetime.strptime(vals['actual_date_time'], '%d-%m-%Y %H:%M:%S').strftime(
-                    '%Y-%m-%d %H:%M:%S')
+                vals['actual_date_time'] = datetime.strptime(vals['actual_date_time'], '%Y-%m-%d %H:%M:%S')
             except ValueError:
-                raise ValidationError("Incorrect date format, should be DD-MM-YYYY HH:MM:SS")
-        if 'planned_date_time' in vals:
+                raise ValidationError("Incorrect date format, should be YYYY-MM-DD HH:MM:SS")
+        if 'planned_date_time' in vals and isinstance(vals['planned_date_time'], str):
             try:
-                vals['planned_date_time'] = datetime.strptime(vals['planned_date_time'], '%d-%m-%Y %H:%M:%S').strftime(
-                    '%Y-%m-%d %H:%M:%S')
+                vals['planned_date_time'] = datetime.strptime(vals['planned_date_time'], '%Y-%m-%d %H:%M:%S')
             except ValueError:
-                raise ValidationError("Incorrect date format, should be DD-MM-YYYY HH:MM:SS")
+                raise ValidationError("Incorrect date format, should be YYYY-MM-DD HH:MM:SS")
         return super(Visit, self).create(vals)
 
     def write(self, vals):
-        if 'actual_date_time' in vals:
+        if 'actual_date_time' in vals and isinstance(vals['actual_date_time'], str):
             try:
-                vals['actual_date_time'] = datetime.strptime(vals['actual_date_time'], '%d-%m-%Y %H:%M:%S').strftime(
-                    '%Y-%m-%d %H:%M:%S')
+                vals['actual_date_time'] = datetime.strptime(vals['actual_date_time'], '%Y-%m-%d %H:%M:%S')
             except ValueError:
-                raise ValidationError("Incorrect date format, should be DD-MM-YYYY HH:MM:SS")
-        if 'planned_date_time' in vals:
+                raise ValidationError("Incorrect date format, should be YYYY-MM-DD HH:MM:SS")
+        if 'planned_date_time' in vals and isinstance(vals['planned_date_time'], str):
             try:
-                vals['planned_date_time'] = datetime.strptime(vals['planned_date_time'], '%d-%m-%Y %H:%M:%S').strftime(
-                    '%Y-%m-%d %H:%M:%S')
+                vals['planned_date_time'] = datetime.strptime(vals['planned_date_time'], '%Y-%m-%d %H:%M:%S')
             except ValueError:
-                raise ValidationError("Incorrect date format, should be DD-MM-YYYY HH:MM:SS")
+                raise ValidationError("Incorrect date format, should be YYYY-MM-DD HH:MM:SS")
         return super(Visit, self).write(vals)
+

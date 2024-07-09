@@ -2,6 +2,7 @@
 
 from odoo import models, fields
 
+
 class Diagnosis(models.Model):
     _name = 'hr_hospital.diagnosis'
     _description = 'Diagnosis'
@@ -14,7 +15,7 @@ class Diagnosis(models.Model):
     visit_id = fields.Many2one(
         comodel_name='hr_hospital.visit',
         string='Visit',
-        required=True
+        required=False
     )
 
     disease_id = fields.Many2one(

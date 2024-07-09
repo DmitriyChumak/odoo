@@ -17,7 +17,7 @@
         'views/disease_views.xml',
         'views/visit_views.xml',
         'views/specialization_views.xml',
-        'views/hospital_actions.xml',
+
         'views/hospital_menu.xml',
 
         'wizard/disease_report_wizard_views.xml',

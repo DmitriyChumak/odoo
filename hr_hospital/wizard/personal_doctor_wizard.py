@@ -1,5 +1,6 @@
 from odoo import models, fields, api
 
+
 class PersonalDoctor(models.TransientModel):
     _name = 'hr_hospital.personal.doctor.wizard'
     _description = 'Personal Doctor Wizard'

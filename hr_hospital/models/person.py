@@ -4,6 +4,7 @@ from odoo import models, fields, api
 from datetime import date, datetime
 from odoo.exceptions import ValidationError
 
+
 class Person(models.AbstractModel):
     _name = 'hr_hospital.person'
     _description = 'Person'
