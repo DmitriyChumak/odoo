@@ -40,12 +40,37 @@
         </field>
     </record>
 
- <!-- Action definition for disease list view -->
+    <!-- Search view with search panel -->
+    <record id="view_disease_search" model="ir.ui.view">
+        <field name="name">disease.search</field>
+        <field name="model">hr_hospital.disease</field>
+        <field name="arch" type="xml">
+            <search string="Diseases">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="description"/>
+                <filter string="Parent Disease" name="parent_id" domain="[('parent_id','=',False)]"/>
+                <group expand="1" string="Group By">
+                    <filter string="Parent Disease" name="group_by_parent_id" context="{'group_by':'parent_id'}"/>
+                </group>
+                <searchpanel>
+                    <field name="parent_id"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action definition for disease list view -->
     <record id="action_disease" model="ir.actions.act_window">
         <field name="name">Diseases</field>
         <field name="res_model">hr_hospital.disease</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="view_disease_tree"/>
+        <field name="view_ids" eval="[
+            (5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('hr_hospital.view_disease_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('hr_hospital.view_disease_form')})
+        ]"/>
+        <field name="search_view_id" ref="hr_hospital.view_disease_search"/>
     </record>
 
 </odoo>

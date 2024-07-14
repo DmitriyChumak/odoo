@@ -32,7 +32,7 @@
         <field name="address">789 Pine Street, Princeton</field>
         <field name="email">eric.foreman@hospital.com</field>
         <field name="specialization_id" ref="specialization_neurologist"/>
-        <field name="is_intern">False</field>
+        <field name="is_intern">True</field>
     </record>
 
     <record id="doctor_allison_cameron" model="hr_hospital.doctor">
@@ -44,7 +44,7 @@
         <field name="address">321 Oak Street, Princeton</field>
         <field name="email">allison.cameron@hospital.com</field>
         <field name="specialization_id" ref="specialization_immunologist"/>
-        <field name="is_intern">False</field>
+        <field name="is_intern">True</field>
     </record>
 
     <record id="doctor_robert_chase" model="hr_hospital.doctor">
@@ -56,7 +56,7 @@
         <field name="address">654 Birch Street, Princeton</field>
         <field name="email">robert.chase@hospital.com</field>
         <field name="specialization_id" ref="specialization_surgeon"/>
-        <field name="is_intern">False</field>
+        <field name="is_intern">True</field>
     </record>
 
     <record id="doctor_chris_taub" model="hr_hospital.doctor">
@@ -68,7 +68,7 @@
         <field name="address">987 Cedar Street, Princeton</field>
         <field name="email">chris.taub@hospital.com</field>
         <field name="specialization_id" ref="specialization_plastic_surgeon"/>
-        <field name="is_intern">False</field>
+        <field name="is_intern">True</field>
     </record>
 
     <record id="doctor_remy_hadley" model="hr_hospital.doctor">
