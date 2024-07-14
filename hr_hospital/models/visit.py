@@ -73,10 +73,26 @@ class Visit(models.Model):
                 if visit.planned_date_time \
                 else visit.patient_id.name
 
-    @api.depends()
+    @api.depends('doctor_id', 'planned_date_time')
     def _compute_visit_count(self):
         for visit in self:
-            visit.visit_count = 1
+            if visit.planned_date_time and visit.id:
+                # the first day of the current month
+                start_date = visit.planned_date_time.replace(day=1)
+
+                # the last day of the current month
+                next_month = start_date + timedelta(days=31)
+                end_date = next_month.replace(day=1) - timedelta(days=1)
+
+                visit_count = self.search_count([
+                    ('doctor_id', '=', visit.doctor_id.id),
+                    ('planned_date_time', '>=', start_date),
+                    ('planned_date_time', '<=', end_date),
+                    ('id', '!=', visit.id)
+                ])
+                visit.visit_count = visit_count + 1
+            else:
+                visit.visit_count = 1
 
     @api.onchange('state')
     def _onchange_state(self):
@@ -85,16 +101,15 @@ class Visit(models.Model):
             self.planned_date_time = self.actual_date_time
             self.doctor_id = self.doctor_id
 
-    @api.constrains('patient_id', 'doctor_id', 'planned_date_time')
-    def _check_unique_patient_doctor_date(self):
-        for rec in self:
-            if rec.planned_date_time:
+    @api.constrains('planned_date_time', 'doctor_id', 'patient_id')
+    def _check_visit_time(self):
+        for visit in self:
+            if visit.planned_date_time and visit.doctor_id and visit.patient_id:
                 overlapping_visits = self.search([
-                    ('doctor_id', '=', rec.doctor_id.id),
-                    ('patient_id', '=', rec.patient_id.id),
-                    ('planned_date_time', '>=', rec.planned_date_time.date()),
-                    ('planned_date_time', '<', rec.planned_date_time.date() + timedelta(days=1)),
-                    ('id', '!=', rec.id)
+                    ('doctor_id', '=', visit.doctor_id.id),
+                    ('patient_id', '=', visit.patient_id.id),
+                    ('planned_date_time', '=', visit.planned_date_time),
+                    ('id', '!=', visit.id)
                 ])
                 if overlapping_visits:
                     raise ValidationError("The doctor already has an appointment with this patient on the same date.")
@@ -106,31 +121,3 @@ class Visit(models.Model):
                 raise UserError(_(
                     "You cannot delete a visit that has diagnoses associated with it."
                 ))
-
-    # @api.model
-    # def create(self, vals):
-    #     if 'actual_date_time' in vals and isinstance(vals['actual_date_time'], str):
-    #         try:
-    #             vals['actual_date_time'] = datetime.strptime(vals['actual_date_time'], '%Y-%m-%d %H:%M:%S')
-    #         except ValueError:
-    #             raise ValidationError("Incorrect date format, should be YYYY-MM-DD HH:MM:SS")
-    #     if 'planned_date_time' in vals and isinstance(vals['planned_date_time'], str):
-    #         try:
-    #             vals['planned_date_time'] = datetime.strptime(vals['planned_date_time'], '%Y-%m-%d %H:%M:%S')
-    #         except ValueError:
-    #             raise ValidationError("Incorrect date format, should be YYYY-MM-DD HH:MM:SS")
-    #     return super(Visit, self).create(vals)
-    #
-    # def write(self, vals):
-    #     if 'actual_date_time' in vals and isinstance(vals['actual_date_time'], str):
-    #         try:
-    #             vals['actual_date_time'] = datetime.strptime(vals['actual_date_time'], '%Y-%m-%d %H:%M:%S')
-    #         except ValueError:
-    #             raise ValidationError("Incorrect date format, should be YYYY-MM-DD HH:MM:SS")
-    #     if 'planned_date_time' in vals and isinstance(vals['planned_date_time'], str):
-    #         try:
-    #             vals['planned_date_time'] = datetime.strptime(vals['planned_date_time'], '%Y-%m-%d %H:%M:%S')
-    #         except ValueError:
-    #             raise ValidationError("Incorrect date format, should be YYYY-MM-DD HH:MM:SS")
-    #     return super(Visit, self).write(vals)
-
