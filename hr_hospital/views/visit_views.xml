@@ -51,7 +51,8 @@
         <field name="name">visit.calendar</field>
         <field name="model">hr_hospital.visit</field>
         <field name="arch" type="xml">
-            <calendar string="Visits" date_start="planned_date_time" color="doctor_id">
+            <calendar string="Visits" color="doctor_id">
+                <field name="planned_date_time"/>
                 <field name="patient_id"/>
                 <field name="doctor_id"/>
                 <field name="state"/>
@@ -89,8 +90,7 @@
         </field>
     </record>
 
-
-    <!-- visit action -->
+    <!-- Action definition for visit list view -->
     <record id="action_visit" model="ir.actions.act_window">
         <field name="name">Visits</field>
         <field name="res_model">hr_hospital.visit</field>
@@ -101,7 +101,7 @@
                                       (0, 0, {'view_mode': 'calendar', 'view_id': ref('view_visit_calendar')}),
                                       (0, 0, {'view_mode': 'pivot', 'view_id': ref('view_visit_pivot')})]"/>
         <field name="search_view_id" ref="view_visit_search"/>
+        <field name="context">{'search_default_filter_by_month': 1}</field>
     </record>
-
 
 </odoo>

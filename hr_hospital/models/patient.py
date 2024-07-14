@@ -36,10 +36,30 @@ class Patient(models.Model):
     contact_person = fields.Char(
         string='Contact Person'
     )
+    diagnosis_history = fields.One2many(
+        comodel_name='hr_hospital.diagnosis',
+        inverse_name='patient_id',
+        string='Diagnosis History'
+    )
+    def action_view_visits(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Visits',
+            'res_model': 'hr_hospital.visit',
+            'view_mode': 'tree,form',
+            'domain': [('patient_id', '=', self.id)],
+            'context': {'default_patient_id': self.id}
+        }
 
-    # def name_get(self):
-    #     result = []
-    #     for patient in self:
-    #         name = f"{patient.first_name} {patient.last_name}"
-    #         result.append((patient.id, name))
-    #     return result
+    def action_create_quick_visit(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Create Visit',
+            'res_model': 'hr_hospital.visit',
+            'view_mode': 'form',
+            'context': {
+                'default_patient_id': self.id,
+                'default_doctor_id': self.personal_doctor_id.id if self.personal_doctor_id else False,
+            },
+            'target': 'new',
+        }
