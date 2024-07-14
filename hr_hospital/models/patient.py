@@ -6,7 +6,7 @@ from odoo import models, fields
 class Patient(models.Model):
     _name = 'hr_hospital.patient'
     _inherit = 'hr_hospital.person'
-    _description = 'Patient'
+    _description = 'Hospital Patients'
 
     personal_doctor_id = fields.Many2one(
         comodel_name='hr_hospital.doctor',
@@ -37,9 +37,9 @@ class Patient(models.Model):
         string='Contact Person'
     )
 
-    def name_get(self):
-        result = []
-        for patient in self:
-            name = f"{patient.first_name} {patient.last_name}"
-            result.append((patient.id, name))
-        return result
+    # def name_get(self):
+    #     result = []
+    #     for patient in self:
+    #         name = f"{patient.first_name} {patient.last_name}"
+    #         result.append((patient.id, name))
+    #     return result

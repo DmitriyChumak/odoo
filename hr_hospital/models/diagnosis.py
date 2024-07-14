@@ -1,6 +1,6 @@
 # diagnosis model
 
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class Diagnosis(models.Model):
@@ -45,3 +45,17 @@ class Diagnosis(models.Model):
         string='Assigned Doctor',
         required=True
     )
+
+    patient_id = fields.Many2one(
+        comodel_name='hr_hospital.patient',
+        string='Patient',
+        required=True
+    )
+
+    @api.model
+    def create(self, vals):
+        if vals.get('visit_id'):
+            visit = self.env['hr_hospital.visit'].browse(vals['visit_id'])
+            vals['doctor_id'] = visit.doctor_id.id
+            vals['patient_id'] = visit.patient_id.id
+        return super(Diagnosis, self).create(vals)

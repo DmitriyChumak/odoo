@@ -8,10 +8,11 @@
         <field name="arch" type="xml">
             <tree string="Diagnoses">
                 <field name="name"/>
-                <field name="description"/>
                 <field name="disease_id"/>
-                <field name="mentor_id"/>
+                <field name="description"/>
+                <field name="doctor_id"/>
                 <field name="approved"/>
+                <field name="patient_id"/>
                 <field name="visit_id"/>
             </tree>
         </field>
@@ -26,11 +27,13 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="disease_id" widget="many2one"/>
                         <field name="description"/>
-                        <field name="disease_id"/>
-                        <field name="mentor_id"/>
-                        <field name="approved"/>
-                        <field name="visit_id"/>
+                        <field name="doctor_id" widget="many2one"/>
+                        <field name="patient_id" widget="many2one"/>
+                        <field name="approved" widget="boolean"/>
+                        <field name="mentor_id" widget="many2one"/>
+                        <field name="visit_id" widget="many2one"/>
                     </group>
                 </sheet>
             </form>

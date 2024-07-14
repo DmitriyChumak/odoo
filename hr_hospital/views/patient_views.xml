@@ -7,17 +7,15 @@
         <field name="model">hr_hospital.patient</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name" readonly="True"/>
+                <field name="name"/>
                 <field name="gender"/>
                 <field name="age"/>
-                <field name="photo"/>
-                <field name="address"/>
-                <field name="supervised_doctor_id"/>
-                <field name="passport_info"/>
-                <field name="personal_doctor_id"/>
-                <field name="disease_ids"/>
+                <field name="phone"/>
                 <field name="contact_person"/>
+                <field name="personal_doctor_id"/>
+                <field name="address"/>
                 <field name="email"/>
+                <field name="passport_info"/>
             </tree>
         </field>
     </record>
@@ -30,24 +28,34 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="name" readonly="True"/>
-                        <field name="birthdate"/>
-                        <field name="phone"/>
-                        <field name="photo"/>
-                        <field name="gender"/>
-                        <field name="age"/>
-                        <field name="address"/>
-                        <field name="email"/>
-                        <field name="passport_info"/>
-                        <field name="contact_person"/>
-                        <field name="personal_doctor_id"/>
-                        <field name="supervised_doctor_id"/>
+                        <group>
+                            <field name="first_name" required="True"/>
+                            <field name="last_name" required="True"/>
+                            <field name="birthdate" widget="datepicker"/>
+                            <field name="gender" widget="selection"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="photo"/>
+                            <field name="address"/>
+                            <field name="email" widget="email"/>
+                        </group>
+                        <group>
+                            field name="name" readonly="True"/>
+                            <field name="age" readonly="True"/>
+                            <field name="passport_info"/>
+                            <field name="contact_person"/>
+                            <field name="personal_doctor_id" widget="many2one"/>
+                            <field name="supervised_doctor_id" widget="many2one"/>
+                        </group>
+
                     </group>
-                    <group>
-                        <field name="disease_ids"/>
-                        <field name="visit_ids"/>
-                        <field name="visit_ids"/>
-                    </group>
+                    <notebook>
+                        <page string="Visits">
+                            <field name="disease_ids"/>
+                        </page>
+                        <page string="Diseases">
+                            <field name="disease_ids"/>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

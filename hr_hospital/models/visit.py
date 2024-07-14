@@ -61,6 +61,11 @@ class Visit(models.Model):
         store=True
     )
 
+    # @api.depends("patient_id", planned_date_time)
+    # def _compute_display_name(self):
+    #     for visit in self:
+    #         visit.name= f'{visit.patient_id.name} {visit.planned_date_time.strftime("%Y-%m")}'
+
     @api.depends('patient_id', 'planned_date_time')
     def _compute_name(self):
         for visit in self:
@@ -102,30 +107,30 @@ class Visit(models.Model):
                     "You cannot delete a visit that has diagnoses associated with it."
                 ))
 
-    @api.model
-    def create(self, vals):
-        if 'actual_date_time' in vals and isinstance(vals['actual_date_time'], str):
-            try:
-                vals['actual_date_time'] = datetime.strptime(vals['actual_date_time'], '%Y-%m-%d %H:%M:%S')
-            except ValueError:
-                raise ValidationError("Incorrect date format, should be YYYY-MM-DD HH:MM:SS")
-        if 'planned_date_time' in vals and isinstance(vals['planned_date_time'], str):
-            try:
-                vals['planned_date_time'] = datetime.strptime(vals['planned_date_time'], '%Y-%m-%d %H:%M:%S')
-            except ValueError:
-                raise ValidationError("Incorrect date format, should be YYYY-MM-DD HH:MM:SS")
-        return super(Visit, self).create(vals)
-
-    def write(self, vals):
-        if 'actual_date_time' in vals and isinstance(vals['actual_date_time'], str):
-            try:
-                vals['actual_date_time'] = datetime.strptime(vals['actual_date_time'], '%Y-%m-%d %H:%M:%S')
-            except ValueError:
-                raise ValidationError("Incorrect date format, should be YYYY-MM-DD HH:MM:SS")
-        if 'planned_date_time' in vals and isinstance(vals['planned_date_time'], str):
-            try:
-                vals['planned_date_time'] = datetime.strptime(vals['planned_date_time'], '%Y-%m-%d %H:%M:%S')
-            except ValueError:
-                raise ValidationError("Incorrect date format, should be YYYY-MM-DD HH:MM:SS")
-        return super(Visit, self).write(vals)
+    # @api.model
+    # def create(self, vals):
+    #     if 'actual_date_time' in vals and isinstance(vals['actual_date_time'], str):
+    #         try:
+    #             vals['actual_date_time'] = datetime.strptime(vals['actual_date_time'], '%Y-%m-%d %H:%M:%S')
+    #         except ValueError:
+    #             raise ValidationError("Incorrect date format, should be YYYY-MM-DD HH:MM:SS")
+    #     if 'planned_date_time' in vals and isinstance(vals['planned_date_time'], str):
+    #         try:
+    #             vals['planned_date_time'] = datetime.strptime(vals['planned_date_time'], '%Y-%m-%d %H:%M:%S')
+    #         except ValueError:
+    #             raise ValidationError("Incorrect date format, should be YYYY-MM-DD HH:MM:SS")
+    #     return super(Visit, self).create(vals)
+    #
+    # def write(self, vals):
+    #     if 'actual_date_time' in vals and isinstance(vals['actual_date_time'], str):
+    #         try:
+    #             vals['actual_date_time'] = datetime.strptime(vals['actual_date_time'], '%Y-%m-%d %H:%M:%S')
+    #         except ValueError:
+    #             raise ValidationError("Incorrect date format, should be YYYY-MM-DD HH:MM:SS")
+    #     if 'planned_date_time' in vals and isinstance(vals['planned_date_time'], str):
+    #         try:
+    #             vals['planned_date_time'] = datetime.strptime(vals['planned_date_time'], '%Y-%m-%d %H:%M:%S')
+    #         except ValueError:
+    #             raise ValidationError("Incorrect date format, should be YYYY-MM-DD HH:MM:SS")
+    #     return super(Visit, self).write(vals)
 
