@@ -51,6 +51,16 @@ class Diagnosis(models.Model):
         string='Patient',
         required=True
     )
+    diagnosis_count = fields.Integer(
+        string='Diagnosis Count',
+        compute='_compute_diagnosis_count',
+        store=True
+    )
+    visit_date = fields.Datetime(
+        string='Visit Date',
+        related='visit_id.planned_date_time',
+        store=True
+    )
 
     @api.model
     def create(self, vals):
@@ -59,3 +69,8 @@ class Diagnosis(models.Model):
             vals['doctor_id'] = visit.doctor_id.id
             vals['patient_id'] = visit.patient_id.id
         return super(Diagnosis, self).create(vals)
+
+    @api.depends('visit_id')
+    def _compute_diagnosis_count(self):
+        for diagnosis in self:
+            diagnosis.diagnosis_count = self.search_count([('disease_id', '=', diagnosis.disease_id.id)])
