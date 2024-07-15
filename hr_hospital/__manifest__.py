@@ -5,7 +5,7 @@
     'author': 'Dmitriy',
     'website': 'http://www.example.com',
     'category': 'Human Resources',
-    'depends': ['base'],
+    'depends': ['base', 'web'],
     'data': [
 
         'security/ir.model.access.csv',
@@ -19,6 +19,10 @@
         'views/hospital_menu.xml',
         'wizard/disease_report_wizard_views.xml',
         'wizard/personal_doctor_views.xml',
+
+        'views/doctor_report_templates.xml',
+        'report/doctor_report_action.xml',
+
     ],
 
     'demo': [
