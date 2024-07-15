@@ -43,6 +43,11 @@ class Doctor(models.Model):
         inverse_name='mentor_id',
         string='Interns'
     )
+    visit_ids = fields.One2many(
+        comodel_name='hr_hospital.visit',
+        inverse_name='doctor_id',
+        string='Visits'
+    )
 
     @api.constrains('mentor_id')
     def _check_mentor(self):

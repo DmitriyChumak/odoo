@@ -44,7 +44,8 @@ class Disease(models.Model):
     complete_name = fields.Char(
         string='Complete Name',
         compute='_compute_complete_name',
-        store=True
+        store=True,
+        recursive=True
     )
 
     parent_left = fields.Integer(index=True)
