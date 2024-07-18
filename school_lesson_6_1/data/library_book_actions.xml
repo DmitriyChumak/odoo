@@ -1,0 +1,25 @@
+<odoo>
+    <!-- Action for books -->
+    <record id="action_library_book" model="ir.actions.act_window">
+        <field name="name">Books</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first book
+            </p>
+        </field>
+    </record>
+
+    <!-- Action for book categories -->
+    <record id="action_library_book_category" model="ir.actions.act_window">
+        <field name="name">Book Categories</field>
+        <field name="res_model">library.book.category</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first book category
+            </p>
+        </field>
+    </record>
+</odoo>
