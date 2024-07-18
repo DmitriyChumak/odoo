@@ -1,0 +1,17 @@
+<odoo noupdate="1">
+    <!-- Fiction category -->
+    <record id="library_book_category_fiction" model="library.book.category">
+        <field name="name">Fiction</field>
+        <field name="description">Fictional books category</field>
+    </record>
+    <!-- Non-Fiction category -->
+    <record id="library_book_category_nonfiction" model="library.book.category">
+        <field name="name">Non-Fiction</field>
+        <field name="description">Non-Fictional books category</field>
+    </record>
+    <!-- Sci-Fi category -->
+    <record id="library_book_category_scifi" model="library.book.category">
+        <field name="name">Sci-Fi</field>
+        <field name="description">Science Fiction books category</field>
+    </record>
+</odoo>

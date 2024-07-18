@@ -1,0 +1,10 @@
+<odoo>
+    <!-- Root menu for Library -->
+    <menuitem id="menu_library_root" name="Library" sequence="10"/>
+
+    <!-- Submenu for Books -->
+    <menuitem id="menu_library_book" name="Books" parent="menu_library_root" action="action_library_book" sequence="10"/>
+
+    <!-- Submenu for Book Categories -->
+    <menuitem id="menu_library_book_category" name="Categories" parent="menu_library_root" action="action_library_book_category" sequence="20"/>
+</odoo>
