@@ -1,8 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Update the name of the book "Поклик предків" -->
-    <record id="book_call_of_the_wild" model="library.book">
-        <field name="name">Поклик пращурів</field>
+    <!-- Update book name -->
+    <record id="library_book_call_of_the_wild" model="library.book">
+        <field name="name">Зов предков</field>
     </record>
-    <!-- Delete the book "Двадцять тисяч льє під водою" -->
-    <delete id="book_twenty_thousand_leagues" model="library.book"/>
+
+    <!-- Delete a book record -->
+    <delete id="library_book_twenty_thousand_leagues" model="library.book"/>
 </odoo>

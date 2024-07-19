@@ -1,17 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Book "Маруся Чурай" -->
-    <record id="book_marusya_churai" model="library.book">
+    <!-- Demo data for books -->
+    <record id="library_book_marusia" model="library.book">
         <field name="name">Маруся Чурай</field>
-        <field name="category_id" ref="library_book_category_fiction"/>
+        <field name="category_id" ref="library_category_fiction"/>
     </record>
-    <!-- Book "Поклик предків" -->
-    <record id="book_call_of_the_wild" model="library.book">
+    <record id="library_book_call_of_the_wild" model="library.book">
         <field name="name">Поклик предків</field>
-        <field name="category_id" ref="library_book_category_nonfiction"/>
+        <field name="category_id" ref="library_category_nonfiction"/>
     </record>
-    <!-- Book "Двадцять тисяч льє під водою" -->
-    <record id="book_twenty_thousand_leagues" model="library.book">
+    <record id="library_book_twenty_thousand_leagues" model="library.book">
         <field name="name">Двадцять тисяч льє під водою</field>
-        <field name="category_id" ref="library_book_category_scifi"/>
+        <field name="category_id" ref="library_category_scifi"/>
     </record>
 </odoo>

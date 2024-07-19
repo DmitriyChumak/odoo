@@ -1,0 +1,9 @@
+<odoo>
+    <!-- Rule for Library Author: Trainees can only modify records added in the last 30 days -->
+    <record id="library_author_rule_trainee" model="ir.rule">
+        <field name="name">Library Author: Trainees can modify recent records</field>
+        <field name="model_id" ref="model_library_author"/>
+        <field name="domain_force">[('date_added', '>=', (context_today() - datetime.timedelta(days=30)).strftime('%Y-%m-%d %H:%M:%S'))]</field>
+        <field name="groups" eval="[(4, ref('school_lesson_6_2.group_library_trainee'))]"/>
+    </record>
+</odoo>

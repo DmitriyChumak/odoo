@@ -1,10 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Root menu for Library -->
-    <menuitem id="menu_library_root" name="Library" sequence="10"/>
+    <!-- Menu item for library.book.category -->
+    <menuitem id="menu_library_root" name="Library" sequence="1"/>
+    <menuitem id="menu_library_book_category" name="Book Categories" parent="menu_library_root" action="action_library_book_category"/>
 
-    <!-- Submenu for Books -->
-    <menuitem id="menu_library_book" name="Books" parent="menu_library_root" action="action_library_book" sequence="10"/>
+    <!-- Menu item for library.book -->
+    <menuitem id="menu_library_book" name="Books" parent="menu_library_root" action="action_library_book"/>
 
-    <!-- Submenu for Book Categories -->
-    <menuitem id="menu_library_book_category" name="Categories" parent="menu_library_root" action="action_library_book_category" sequence="20"/>
+    <!-- Actions for views -->
+    <record id="action_library_book_category" model="ir.actions.act_window">
+        <field name="name">Book Categories</field>
+        <field name="res_model">library.book.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_library_book" model="ir.actions.act_window">
+        <field name="name">Books</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
 </odoo>
