@@ -9,3 +9,8 @@ class LibraryBookCategory(models.Model):
         required=True
     )
     description = fields.Text(string='Description')
+    book_ids = fields.One2many(
+        comodel_name='library.book',
+        inverse_name= 'category_id',
+        string='Books'
+    )

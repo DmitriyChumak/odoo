@@ -5,10 +5,12 @@
         <field name="name">Маруся Чурай</field>
         <field name="category_id" ref="library_category_fiction"/>
     </record>
+
     <record id="library_book_call_of_the_wild" model="library.book">
         <field name="name">Поклик предків</field>
         <field name="category_id" ref="library_category_nonfiction"/>
     </record>
+
     <record id="library_book_twenty_thousand_leagues" model="library.book">
         <field name="name">Двадцять тисяч льє під водою</field>
         <field name="category_id" ref="library_category_scifi"/>

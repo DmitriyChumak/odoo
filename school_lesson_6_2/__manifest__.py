@@ -14,9 +14,10 @@
         'security/groups.xml',
         'security/ir_rule.xml',
         'security/ir.model.access.csv',  # Access rights
-
         'views/library_author_views.xml',
         'views/library_author_menu.xml',
+        'data/users_groups.xml',
+        'data/library_author_data.xml',
     ],
     'application': False,
     'installable': True,

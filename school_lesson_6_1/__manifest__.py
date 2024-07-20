@@ -14,10 +14,11 @@
         'security/library_security.xml',
         'security/ir.model.access.csv',  # Access rights
 
-
-        'views/library_book_views.xml',
         'data/library_book_category_data.xml',  # Master data
         'data/library_book_update.xml',
+
+        'views/library_book_views.xml',
+        'views/library_book_category_views.xml',
         'views/library_book_menus.xml',  # Menus
     ],
 

@@ -1,0 +1,13 @@
+<odoo>
+    <!-- access right for admin  -->
+    <record id="base.user_admin" model="res.users">
+        <field name="groups_id" eval="[(4, ref('school_lesson_6_1.group_library_user')),
+                                       (4, ref('school_lesson_6_1.group_library_manager')),
+                                       (4, ref('school_lesson_6_2.group_library_trainee'))]"/>
+    </record>
+
+    <!-- access right for user_demo -->
+    <record id="base.user_demo" model="res.users">
+        <field name="groups_id" eval="[(4, ref('school_lesson_6_2.group_library_trainee'))]"/>
+    </record>
+</odoo>

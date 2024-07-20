@@ -9,6 +9,7 @@ class LibraryAuthor(models.Model):
     biography = fields.Text(string='Biography')
     create_date = fields.Datetime(string='Creation Date', default=fields.Datetime.now)
     recent_author = fields.Boolean(compute='_compute_recent_author', store=True)
+    book_ids = fields.One2many(comodel_name='library.book', inverse_name='author_id', string='Books')
 
     @api.depends('create_date')
     def _compute_recent_author(self):
