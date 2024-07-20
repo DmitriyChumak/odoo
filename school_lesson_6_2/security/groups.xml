@@ -1,0 +1,8 @@
+<odoo>
+    <!-- Define new group 'Trainee' -->
+    <record id="group_library_trainee" model="res.groups">
+        <field name="name">Trainee</field>
+        <field name="category_id" ref="school_lesson_6_1.module_category_library"/>
+        <field name="implied_ids" eval="[(4, ref('school_lesson_6_1.group_library_user')), (4, ref('school_lesson_6_1.group_library_manager'))]"/>
+    </record>
+</odoo>

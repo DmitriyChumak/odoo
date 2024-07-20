@@ -3,12 +3,12 @@
     <!-- Define library user group -->
     <record id="group_library_user" model="res.groups">
         <field name="name">Library User</field>
-        <field name="category_id" ref="school_lesson_6_1.module_category_library"/>
+        <field name="category_id" ref="module_category_library"/>
     </record>
 
     <!-- Define library manager group -->
     <record id="group_library_manager" model="res.groups">
         <field name="name">Library Manager</field>
-        <field name="category_id" ref="school_lesson_6_1.module_category_library"/>
+        <field name="category_id" ref="module_category_library"/>
     </record>
 </odoo>

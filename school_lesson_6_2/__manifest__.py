@@ -11,6 +11,7 @@
         'school_lesson_6_1'
     ],
     'data': [
+        'security/groups.xml',
         'security/ir_rule.xml',
         'security/ir.model.access.csv',  # Access rights
 

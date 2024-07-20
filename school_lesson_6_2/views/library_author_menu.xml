@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <!-- Menu item for authors under the root library menu -->
     <menuitem id="menu_library_author" name="Authors" parent="school_lesson_6_1.menu_library_root" sequence="4" action="school_lesson_6_2.action_library_author"/>
