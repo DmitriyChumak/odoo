@@ -1,3 +1,3 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_library_book_trainee,access_library_book_trainee,model_library_book,group_library_trainee,1,0,1,0
-access_library_author_trainee,access_library_author_trainee,model_library_author,group_library_trainee,1,1,1,0
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_library_book_trainee","library.book trainee","school_lesson_6_1.model_library_book","school_lesson_6_2.group_library_trainee",1,0,1,0
+"access_library_author_trainee","library.author trainee","model_library_author","school_lesson_6_2.group_library_trainee",1,1,1,0

@@ -9,11 +9,16 @@
     'depends': ['base'],
     'data': [
 
+        'data/library_module_category.xml',
+
+        'security/library_security.xml',
         'security/ir.model.access.csv',  # Access rights
+
+
         'views/library_book_views.xml',
         'data/library_book_category_data.xml',  # Master data
         'data/library_book_update.xml',  # Updates to existing records
-        'data/library_book_menus.xml',  # Menus
+        'views/library_book_menus.xml',  # Menus
     ],
 
     'demo': [
