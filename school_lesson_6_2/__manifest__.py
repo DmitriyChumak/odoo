@@ -20,6 +20,10 @@
         'data/users_groups.xml',
         'data/library_author_data.xml',
     ],
+
+    'i18n': [
+        'i18n/uk_UA.po',
+    ],
     'application': False,
     'installable': True,
     'auto_install': False,

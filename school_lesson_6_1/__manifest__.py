@@ -1,33 +1,37 @@
 {
-    'name': 'School Lesson 6-1',
+    'name': 'School Lesson 6.1',
     'version': '1.0',
-    'summary': 'Module for school lesson 6-1',
-    'category': 'Extra Tools',
+    'category': 'Education',
+    'summary': 'Module for managing library books and categories',
+    'description': """
+        School Lesson 6.1
+        =================
+        This module allows the management of library books and their categories.
+
+        Key Features:
+        -------------
+        * Create and manage book records
+        * Categorize books into different categories
+        * Assign readers to books
+        * Track checkout and return dates
+        * Manage user access rights for books and categories
+    """,
     'author': 'Dmitriy Chumak',
-    'website': 'https://yourwebsite.com',
-    'license': 'LGPL-3',
+    'website': 'https://www.example.com',
     'depends': ['base'],
+
     'data': [
-
-        'data/library_module_category.xml',
-
-        'security/library_security.xml',
-        'security/ir.model.access.csv',  # Access rights
-
-        'data/library_book_category_data.xml',  # Master data
-        'data/library_book_update.xml',
-
+        'security/ir.model.access.csv',
+        'data/library_book_category_data.xml',
         'views/library_book_views.xml',
         'views/library_book_category_views.xml',
-        'views/library_book_menus.xml',  # Menus
+        'views/library_menu.xml',
     ],
-
     'demo': [
-        'demo/library_book_demo.xml',  # Demo data
+        'demo/library_book_demo.xml',
+        'demo/library_book_update_demo.xml',
     ],
-
-
-    'application': False,
     'installable': True,
-    'auto_install': False,
+    'application': True,
+    'license': 'LGPL-3',
 }

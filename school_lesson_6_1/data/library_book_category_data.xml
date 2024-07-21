@@ -1,16 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Master data for library.book.category model.
+This data includes predefined book categories that will be available
+in the system by default and will not be updated during module updates.
+-->
 <odoo noupdate="1">
-    <!-- Master data for book categories -->
-    <record id="library_category_fiction" model="library.book.category">
+    <record id="category_fiction" model="library.book.category">
         <field name="name">Fiction</field>
-        <field name="description">Fiction books category</field>
+        <field name="description">Fiction books</field>
     </record>
-    <record id="library_category_nonfiction" model="library.book.category">
+    <record id="category_non_fiction" model="library.book.category">
         <field name="name">Non-Fiction</field>
-        <field name="description">Non-Fiction books category</field>
+        <field name="description">Non-Fiction books</field>
     </record>
-    <record id="library_category_scifi" model="library.book.category">
-        <field name="name">Science Fiction</field>
-        <field name="description">Science Fiction books category</field>
+    <record id="category_classics" model="library.book.category">
+        <field name="name">Classics</field>
+        <field name="description">Classical literature</field>
     </record>
 </odoo>
