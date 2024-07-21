@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Create authors -->
+    <!-- Adding authors -->
     <record id="library_author_ivan_franko" model="library.author">
         <field name="name">Ivan Franko</field>
-        <field name="biography">Biography of Ivan Franko</field>
     </record>
 
     <record id="library_author_jack_london" model="library.author">
         <field name="name">Jack London</field>
-        <field name="biography">Biography of Jack London</field>
     </record>
 
     <record id="library_author_jules_verne" model="library.author">
         <field name="name">Jules Verne</field>
-        <field name="biography">Biography of Jules Verne</field>
     </record>
 
-    <!-- Update demo books to include author references -->
-    <record id="library_book_marusia" model="library.book">
-        <field name="author_id" ref="school_lesson_6_2.library_author_ivan_franko"/>
-    </record>
+    <!-- Updating existing books to include authors -->
+    <function model="library.book" name="write">
+        <value eval="[ref('school_lesson_6_1.library_book_marusia')]"/>
+        <value eval="{'author_id': ref('school_lesson_6_2.library_author_ivan_franko')}"/>
+    </function>
 
-    <record id="library_book_call_of_the_wild" model="library.book">
-        <field name="author_id" ref="school_lesson_6_2.library_author_jack_london"/>
-    </record>
+    <function model="library.book" name="write">
+        <value eval="[ref('school_lesson_6_1.library_book_call_of_the_wild')]"/>
+        <value eval="{'author_id': ref('school_lesson_6_2.library_author_jack_london')}"/>
+    </function>
 
-    <record id="library_book_twenty_thousand_leagues" model="library.book">
-        <field name="author_id" ref="school_lesson_6_2.library_author_jules_verne"/>
-    </record>
+    <function model="library.book" name="write">
+        <value eval="[ref('school_lesson_6_1.library_book_twenty_thousand_leagues')]"/>
+        <value eval="{'author_id': ref('school_lesson_6_2.library_author_jules_verne')}"/>
+    </function>
 </odoo>
