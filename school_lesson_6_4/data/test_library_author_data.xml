@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Adding common test record for author Mark Twain -->
+    <record id="author_mark_twain" model="library.author">
+        <field name="first_name">Mark</field>
+        <field name="second_name">Twain</field>
+    </record>
+</odoo>
