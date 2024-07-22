@@ -23,7 +23,7 @@
     ],
 
     'i18n': [
-
+        'uk_UA.po',
     ],
     'application': False,
     'installable': True,

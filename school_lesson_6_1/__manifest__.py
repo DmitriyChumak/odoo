@@ -31,6 +31,10 @@
         'demo/library_book_demo.xml',
         'demo/library_book_update_demo.xml',
     ],
+
+    'i18n': [
+        'uk_UA.po',
+    ],
     'installable': True,
     'application': True,
     'license': 'LGPL-3',

@@ -2,15 +2,18 @@
 <odoo>
     <!-- Adding authors -->
     <record id="library_author_ivan_franko" model="library.author">
-        <field name="name">Ivan Franko</field>
+        <field name="first_name">Ivan</field>
+        <field name="second_name">Franko</field>
     </record>
 
     <record id="library_author_jack_london" model="library.author">
-        <field name="name">Jack London</field>
+        <field name="first_name">Jack</field>
+        <field name="second_name">London</field>
     </record>
 
     <record id="library_author_jules_verne" model="library.author">
-        <field name="name">Jules Verne</field>
+        <field name="first_name">Jules</field>
+        <field name="second_name">Verne</field>
     </record>
 
     <!-- Updating existing books to include authors -->
