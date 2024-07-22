@@ -15,17 +15,17 @@
 
     <!-- Updating existing books to include authors -->
     <function model="library.book" name="write">
-        <value eval="[ref('school_lesson_6_1.library_book_marusia')]"/>
+        <value eval="[ref('school_lesson_6_1.book_marusia_churai')]"/>
         <value eval="{'author_id': ref('school_lesson_6_2.library_author_ivan_franko')}"/>
     </function>
 
     <function model="library.book" name="write">
-        <value eval="[ref('school_lesson_6_1.library_book_call_of_the_wild')]"/>
+        <value eval="[ref('school_lesson_6_1.book_call_of_the_wild')]"/>
         <value eval="{'author_id': ref('school_lesson_6_2.library_author_jack_london')}"/>
     </function>
 
     <function model="library.book" name="write">
-        <value eval="[ref('school_lesson_6_1.library_book_twenty_thousand_leagues')]"/>
+        <value eval="[ref('school_lesson_6_1.book_twenty_thousand_leagues')]"/>
         <value eval="{'author_id': ref('school_lesson_6_2.library_author_jules_verne')}"/>
     </function>
 </odoo>
