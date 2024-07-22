@@ -18,8 +18,8 @@
         'views/library_author_views.xml',
         'views/library_author_menu.xml',
         'views/library_book_views.xml',
-
         'data/library_author_data.xml',
+
     ],
 
     'i18n': [
