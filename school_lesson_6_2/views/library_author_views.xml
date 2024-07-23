@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <!-- Tree view for library.author -->
+    <!-- This view defines the tree (list) representation of library authors -->
     <record id="view_library_author_tree" model="ir.ui.view">
         <field name="name">library.author.tree</field>
         <field name="model">library.author</field>
@@ -14,6 +15,7 @@
     </record>
 
     <!-- Form view for library.author -->
+    <!-- This view defines the form representation of a library author -->
     <record id="view_library_author_form" model="ir.ui.view">
         <field name="name">library.author.form</field>
         <field name="model">library.author</field>
@@ -31,6 +33,7 @@
     </record>
 
     <!-- Action for library.author -->
+    <!-- This action defines the window action for accessing library authors -->
     <record id="action_library_author" model="ir.actions.act_window">
         <field name="name">Authors</field>
         <field name="res_model">library.author</field>

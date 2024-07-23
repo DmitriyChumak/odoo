@@ -1,7 +1,9 @@
 from odoo import models, fields
 
+
 class LibraryBookCategory(models.Model):
-    """Model for representing a library book category.
+    """
+    Model for representing a library book category.
 
     Attributes:
         name (Char): The name of the category.
@@ -28,7 +30,8 @@ class LibraryBookCategory(models.Model):
     )
 
     def action_books_this_category(self):
-        """Returns an action to view books in this category.
+        """
+        Returns an action to view books in this category.
 
         This method returns a dictionary with the action parameters to view books filtered by this category.
 

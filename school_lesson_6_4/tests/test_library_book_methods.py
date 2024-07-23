@@ -3,8 +3,18 @@ from odoo.tests.common import TransactionCase, tagged
 
 @tagged('odooschool')
 class TestLibraryBookMethods(TransactionCase):
+    """
+    Test cases for methods in the library.book model.
+
+    This class contains tests to verify the behavior of custom methods in the library.book model.
+    """
 
     def setUp(self):
+        """
+        Set up the test environment.
+
+        This method initializes the test environment, creates a test author, and a test book.
+        """
         super(TestLibraryBookMethods, self).setUp()
         # Create a test author
         self.author_mark_twain = self.env['library.author'].create({
@@ -18,6 +28,11 @@ class TestLibraryBookMethods(TransactionCase):
         })
 
     def test_action_scrap_book(self):
+        """
+        Test the action_scrap_book method.
+
+        This test verifies that the book is initially active and becomes inactive after calling the action_scrap_book method.
+        """
         # Check initial state of the book
         self.assertTrue(self.book.is_active, "Book should be active initially.")
 
