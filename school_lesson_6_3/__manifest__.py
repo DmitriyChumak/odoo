@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
 {
-    'name': 'School Lesson 6-1',
+    'name': 'School Lesson 6-3',
     'version': '1.0',
     'category': 'Library',
     'summary': 'Manage library books and categories',
@@ -15,25 +14,16 @@
     'author': 'Dmitriy Chumak',
     'website': 'http://www.example.com',
     'license': 'LGPL-3',
-    'depends': ['base'],
+    'depends': [
+        'base',
+        'school_lesson_6_1', 'school_lesson_6_2',
+    ],
     'data': [
-        'security/ir.model.access.csv',
-        'views/library_book_views.xml',
         'views/library_book_category_views.xml',
-        'views/library_menu.xml',
-        'data/library_book_category_data.xml',
-
-    ],
-    'demo': [
-        'demo/library_book_demo.xml',
-        'demo/library_book_update_demo.xml',
     ],
 
-    'i18n': [
-        'uk_UA.po',
-    ],
 
+    'application': False,
     'installable': True,
-    'application': True,
     'auto_install': False,
 }
